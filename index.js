@@ -15,7 +15,9 @@ let bump = (opts, cb) => {
 
   opts.str = opts.str.replace(regex, function(match, prefix, parsed, prerelease, suffix) {
     let version = parseInt(parsed);
+    opts.prev = version;
     version++;
+    opts.new = version;
     return prefix + version + (suffix || '');
   });
 
@@ -48,8 +50,7 @@ module.exports = function(opts) {
 
       if (!opts.quiet) {
       log('Bumped', log.colors.cyan(res.prev),
-        'to', log.colors.magenta(res.new),
-        'with type:', log.colors.cyan(res.type));
+        'to', log.colors.magenta(res.new));
       }
       file.bumpData = res;
       cb(null, file);
