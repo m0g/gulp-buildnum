@@ -1,0 +1,12 @@
+node_modules/
+npm-debug.log
+
+# VIM related files
+*.swo
+*.swp
+*.swn
+*.swm
+
+*.tar.gz
+*.old
+*~
