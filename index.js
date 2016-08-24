@@ -41,7 +41,7 @@ module.exports = function(opts) {
     }
 
     opts.str = String(file.contents);
-    console.log('bump', opts);
+
     bump(opts, function(err, res) {
       if (err) {
         return cb(new pluginError(PLUGIN_NAME, err));
